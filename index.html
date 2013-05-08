@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+<link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="main.js" type="text/javascript"></script>
+<link href="jquery.zrssfeed.css" rel="stylesheet" type="text/css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="jquery.zrssfeed.min.js" type="text/javascript"></script>
+<link href="css/FeedEk.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/FeedEk.js"></script>
+
+<script type="text/javascript" >
+    $(document).ready(function () {  
+        $('#divRss').FeedEk({
+            FeedUrl: 'http://rss.in.gr/feed/news/economy/',
+            MaxCount: 5
+        });
+  	
+        });    
+
+</script>
+
+
+
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Page One</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#getFeeds">GET FEEDS</a></li>
+            <li><a href="#editFeeds">EDIT FEEDS</a></li>
+			<li><a href="#page4">Test RSS</a></li>
+		</ul>	
+
+        
+       	
+	</div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="getFeeds">
+<div data-role="header" class="ui-bar" data-position="fixed">
+<a href="#page" data-role="button" data-mini="true" data-inline="true"class="ui-btn-left">Home</a>
+		<h1>RSS Feeds</h1>
+	</div>
+   	<div data-role="content">	
+
+<div id="result"></div>
+
+
+<script language="javascript1.5"> readLocal()</script>
+  
+
+	</div>
+	<div data-role="footer" data-id="foo1" data-position="fixed"> 
+</div>
+</div>
+</div>
+
+<div data-role="page" id="editFeeds">
+<div data-role="header" class="ui-bar" data-position="fixed">
+<a href="#page" data-role="button" data-mini="true" data-inline="true"class="ui-btn-left">Home</a>
+		<h1>EDIT RSS FEEDS</h1>
+	</div>
+   	<div data-role="content">	
+	<ul data-role="listview">
+       <li><a href="#addNewFeed">ADD NEW FEED</a></li>
+       <li><a href="#deleteFeed">DELETE FEED</a></li>
+       </ul>
+	</div>
+    
+
+    
+	<div data-role="footer" data-id="foo1" data-position="fixed"> 
+</div>
+</div>
+</div>
+
+
+/////ADD FEED
+
+
+<div data-role="page" id="addNewFeed">
+<div data-role="header" class="ui-bar" data-position="fixed">
+<a href="#page" data-role="button" data-mini="true" data-inline="true"class="ui-btn-left">Home</a>
+
+		<h1>Add New RSS Feed</h1>
+	</div>
+   	<div data-role="content">	
+	 <label for="basic">RSS title</label>
+    <input type="text" name="rssTitle" id="rssTitle" value=""  />
+    <label for="basic">RSS URI</label>
+    <input type="text" name="rssLink" id="rssLink" value="http://"  />
+    <input type="button" value="Save RSS" onclick="saveLocal()"/>
+	</div>
+    
+
+    
+	<div data-role="footer" data-id="foo1" data-position="fixed"> 
+</div>
+</div>
+</div>
+
+/////////////
+
+/////DELETE FEED
+
+
+<div data-role="page" id="deleteFeed">
+<div data-role="header" class="ui-bar" data-position="fixed">
+<a href="#page" data-role="button" data-mini="true" data-inline="true"class="ui-btn-left">Home</a>
+		<h1>DELETE RSS Feed</h1>
+	</div>
+   	<div data-role="content">	
+	
+    
+
+    
+	<div data-role="footer" data-id="foo1" data-position="fixed"> 
+</div>
+</div>
+</div>
+
+/////////////
+
+
+
+<div data-role="page" id="page4">
+	<div data-role="header" class="ui-bar" data-position="fixed">
+<a href="#getFeeds" data-role="button" data-mini="true" data-inline="true"class="ui-btn-left"> < Back to feeds</a>
+		<h1>Page Four</h1>
+	</div>
+	<div data-role="content">	
+		
+        <div id="testRSS">
+</div>
+        
+
+        
+       	
+	</div>
+    
+            <div class="rssDiv">
+<p>Example<p/>
+<div id="divRss"></div>
+</div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+
+
+</body>
+</html>
